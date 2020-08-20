@@ -13,6 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install typescript
-      run: pacman -Sy typescript
+      run: pacman --noconfirm -Sy typescript
     - name: compile
       run: tsc
