@@ -1,0 +1,15 @@
+name: build
+
+on:
+  push:
+    branches: [ OwO ]
+  pull_request:
+    branches: [ OwO ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: tsc
+      uses: icrawl/action-tsc@v1
