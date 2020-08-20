@@ -9,7 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: archlinux
     steps:
     - uses: actions/checkout@v2
-    - name: tsc
-      uses: icrawl/action-tsc@v1
+    - name: install typescript
+      run: pacman -Sy typescript
+    - name: compile
+      run: tsc
