@@ -20,8 +20,7 @@ interface ShopPurchaseQuantityTemplate<DescType> extends CustomFormDefinitionBas
 }
 
 interface ShopPlayerInterface<DescType> {
-    execute(desc: DescType, count: number): void;
-    updateBalance(count: number): void;
+    execute(desc: DescType, price: number, count: number): void;
     sendSuccessMessage(desc: DescType): void;
     sendCancelMessage(desc: DescType): void;
     getMax(desc: DescType): number;
@@ -74,8 +73,7 @@ export function buildShopModule<DescType>(def: ShopDefinition<DescType>): FormMo
                             button1,
                             button2,
                         }).then(() => {
-                            ifce.updateBalance(count);
-                            ifce.execute(desc, count);
+                            ifce.execute(desc, cost, count);
                             ifce.sendSuccessMessage(desc);
                         }).catch(() => {
                             ifce.sendCancelMessage(desc);

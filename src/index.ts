@@ -46,11 +46,9 @@ const shopmod = shop.buildShopModule({
     },
     getInterface(player: PlayerEntry) {
         return {
-            execute(desc: string, count: number): void {
+            execute(desc: string, price: number, count: number): void {
+                updateBalance(player, - price * count, "购买商品");
                 executeCommand(`/give "${player.name}" ${desc} ${count}`);
-            },
-            updateBalance(count: number): void {
-                updateBalance(player, count, "购买商品");
             },
             sendSuccessMessage(desc: string): void {
                 executeCommand(`/tell "${player.name}" 购买 ${desc} 成功`);
