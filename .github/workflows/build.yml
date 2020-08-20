@@ -16,3 +16,7 @@ jobs:
       run: pacman --noconfirm -Sy typescript
     - name: compile
       run: tsc
+    - name: upload
+      uses: actions/upload-artifact@v2
+      with:
+        path: dist
