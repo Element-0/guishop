@@ -25,13 +25,13 @@ const shopmod = shop.buildShopModule({
         categoryName: "类别A",
         text: "假装是第一种木头",
         image: localIcon("textures/blocks/planks_oak"),
-        desc: "minecraft:planks",
+        desc: "planks",
         cost: 5,
     }, {
         categoryName: "类别B",
         text: "假装是第二种木头",
         image: localIcon("textures/blocks/crimson_planks"),
-        desc: "minecraft:crimson_planks",
+        desc: "crimson_planks",
         cost: 10,
     }],
     template: {
